@@ -9,6 +9,14 @@
         body {
             margin: 0;
             font-family: 'Raleway', sans-serif;
+            background-color:cyan;
+        }
+
+        #header {
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
         }
 
         p{
@@ -19,7 +27,7 @@
         #quiz {
             width: 400px;
             margin: 20px auto;
-            background-color:cyan;
+            background-color:lightcyan;
             padding: 20px;
             border: 1px solid gray;
             box-shadow: 2px 2px 5px red;
@@ -40,10 +48,21 @@
             color:green;
             margin: 25px 0;
         }
+
+        a{
+            text-decoration: none;
+            color: blue;
+            margin: 0px 20px;
+        }
     </style>
 </head>
 
 <body>
+    <header id="header">
+        <a href="./places.html">Favourite Places</a>
+        <a href="./quiz.html">Play Quiz</a>
+        <a href="./survey.html">Survey Form</a>
+    </header>
     <h2 style="text-align: center;">Quiz</h2>
     <form method="GET" id="quiz">
         <p>
