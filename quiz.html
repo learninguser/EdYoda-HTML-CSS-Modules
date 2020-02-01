@@ -9,17 +9,16 @@
         body {
             margin: 0;
             font-family: 'Raleway', sans-serif;
-            background-color:cyan;
+            background-color: cyan;
         }
 
         #header {
             width: 100%;
             background-color: white;
             padding: 20px 0;
-            text-align: center;
         }
 
-        p{
+        p {
             font-size: 18px;
             font-weight: 600;
         }
@@ -27,7 +26,7 @@
         #quiz {
             width: 400px;
             margin: 20px auto;
-            background-color:lightcyan;
+            background-color: lightcyan;
             padding: 20px;
             border: 1px solid gray;
             box-shadow: 2px 2px 5px red;
@@ -38,30 +37,46 @@
             width: 200px;
             height: 50px;
             margin: 10px 75px;
-            background-color:darkseagreen;
+            background-color: darkseagreen;
             border: 0;
             font-size: 18px;
             font-weight: 700;
         }
 
-        hr{
-            color:green;
+        hr {
+            color: green;
             margin: 25px 0;
         }
 
-        a{
+        a {
             text-decoration: none;
             color: blue;
-            margin: 0px 20px;
+            margin: 0 40px;
+        }
+
+        #logo {
+            width: 75px;
+            height: 50px;
+            margin: 0;
+        }
+
+        #nav-items {
+            width: 600px;
+            margin-left: 250px;
         }
     </style>
 </head>
 
 <body>
     <header id="header">
-        <a href="./places.html">Favourite Places</a>
-        <a href="./quiz.html">Play Quiz</a>
-        <a href="./survey.html">Survey Form</a>
+        <div id="logo">
+            <img src="logo_1.png" alt="logo"></img>
+        </div>
+        <nav id="nav-items">
+            <a href="./places.html">Favourite Places</a>
+            <a href="./quiz.html">Play Quiz</a>
+            <a href="./survey.html">Survey Form</a>
+        </nav>
     </header>
     <h2 style="text-align: center;">Quiz</h2>
     <form method="GET" id="quiz">
