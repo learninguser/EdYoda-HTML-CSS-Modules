@@ -65,7 +65,7 @@ nav {
     font-size: 14px;
     padding: 4px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 ul>hr {
@@ -82,26 +82,26 @@ ul>hr {
     right: 0;
 }
 
-#heading>h1{
+#heading{
     width: 60vw;
     position: absolute;
     text-align: center;
-    font-size: 44px;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: 8.8px;
     top: 42%;
     left: 20vw;
 }
 
-#sub-title {
+#heading h1{
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 8.8px;
+}
+
+#heading p {
+    padding-top: 32px;
     font-size: 14px;
-    width: 60vw;
     color: #8b8b99;
     font-weight: 400;
     text-align: center;
-    position: absolute;
-    top: 55%;
-    left: 20vw;
     letter-spacing: 0.5px;
 }
