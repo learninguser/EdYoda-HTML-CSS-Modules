@@ -496,7 +496,11 @@ footer {
 
 /* Footer section ends here */
 
-@media (max-width: 780px) {
+@media (max-width: 400px) {
+    #heading {
+        width: 80vw;
+        left: 10vw;
+    }
     #dropdown-wrapper>a {
         display: none;
     }
@@ -532,5 +536,51 @@ footer {
     }
     .testimonial-by {
         font-size: important 18px;
+    }
+    #sec-follow-us {
+        display: flex;
+        flex-direction: column;
+    }
+    #sec-follow-us #img-follow {
+        width: 100%;
+    }
+    #sec-follow-us #right {
+        width: 100%;
+    }
+    #sec-follow-us>#right>#follow-text {
+        padding: 20px 40px;
+    }
+    #site-stats {
+        padding: 0px;
+    }
+    #stats-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 54px;
+    }
+    #stats-wrapper div {
+        width: 100%;
+        padding: 4px 0px;
+    }
+    #vimeo-video hr {
+        margin-bottom: 18px;
+    }
+    #vimeo-video iframe {
+        height: 300px;
+    }
+    #address-wrapper {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 20px;
+        padding-top: 0;
+        box-sizing: border-box;
+    }
+    #address-wrapper div {
+        width: 100%;
+    }
+    #address-wrapper>#contact {
+        width: 100%;
+        padding: 24px 0;
     }
 }
