@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap" rel="stylesheet">
+    <title>Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: cyan;
+        }
+
+        #header {
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #quiz {
+            width: 400px;
+            margin: 20px auto;
+            background-color: lightcyan;
+            padding: 20px;
+            border: 1px solid gray;
+            box-shadow: 2px 2px 5px red;
+
+        }
+
+        .buttons {
+            width: 200px;
+            height: 50px;
+            margin: 10px 75px;
+            background-color: darkseagreen;
+            border: 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        hr {
+            color: green;
+            margin: 25px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            margin: 0 40px;
+        }
+
+        #logo {
+            width: 75px;
+            height: 50px;
+            margin: 0;
+        }
+
+        #nav-items {
+            width: 600px;
+            margin-left: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div id="logo">
+            <img src="logo_1.png" alt="logo"></img>
+        </div>
+        <nav id="nav-items">
+            <a href="./places.html">Favourite Places</a>
+            <a href="./quiz.html">Play Quiz</a>
+            <a href="./survey.html">Survey Form</a>
+        </nav>
+    </header>
+    <h2 style="text-align: center;">Quiz</h2>
+    <form method="GET" id="quiz">
+        <p>
+            Q1) Who is making the Web Standards?
+        </p>
+        <label>
+            <input type="radio" value="1" name="q1">
+            <span>Mozilla</span><br>
+        </label>
+        <label>
+            <input type="radio" value="2" name="q1">
+            <span>Microsoft</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q1" value="3">
+            <span>Apple</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q1" value="4">
+            <span>The World Wide Web Consortium</span><br>
+        </label>
+        <hr>
+        <p>
+            Q2) What does HTML stand for?
+        </p>
+        <label>
+            <input type="radio" name="q2" value="1">
+            <span>
+                Hyper Text Markup Language
+            </span><br>
+        </label>
+        <label>
+            <input type="radio" name="q2" value="2">
+            <span> Hyperlinks and Text Markup Language</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q2" value="3">
+            <span>Home Tool Markup Language</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q2" value="4">
+            <span>Hypo Tool Markup Language</span><br>
+        </label>
+        <hr>
+        <p>
+            Q3) Choose the correct HTML tag for the largest heading.
+        </p>
+        <label>
+            <input type="radio" name="q3" value="1">
+            <span>H1</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q3" value="2">
+            <span>heading</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q3" value="3">
+            <span>Head</span><br>
+        </label>
+        <label>
+            <input type="radio" name="q3" value="4">
+            <span>h5</span><br>
+        </label>
+        <hr>
+        <input type="submit" value="Submit Answers" class="buttons"><br>
+        <input type="reset" value="Reset form" class="buttons">
+    </form>
+</body>
+
+</html>
