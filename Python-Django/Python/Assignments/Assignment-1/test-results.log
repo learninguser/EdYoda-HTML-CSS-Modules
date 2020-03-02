@@ -1,0 +1,1600 @@
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py FFFFFFFFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+_______________________________________________________________ test_eval1[9999335533-zeke] ________________________________________________________________
+
+test_input = 9999335533, expected = 'zeke'
+
+    @pytest.mark.parametrize("test_input, expected", [(9999335533, 'zeke')])
+    def test_eval1(test_input, expected):
+>       assert question_first_solution(test_input)== expected
+
+test_student.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+a01.py:21: in question_first_solution
+    split_text = splitterz(input_seq)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+txt = 9999335533
+
+    def splitterz(txt):
+        return (''.join(x + ('' if x == nxt else ', ')
+>               for x, nxt in zip(txt, txt[1:] + txt[-1])))
+E       TypeError: 'int' object is not subscriptable
+
+a01.py:7: TypeError
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+____________________________________________________________ test_eval3[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']}
+expected = {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+
+    @pytest.mark.parametrize("test_input, expected",
+    [
+        ({'New Hampshire': ['Concord', 'Hanover'],
+          'Massachusetts': ['Boston', 'Concord',
+          'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']
+         },
+         {'Hanover': ['New Hampshire'],
+          'Chicago': ['Illinois'],
+          'Boston': ['Massachusetts'],
+          'Peoria': ['Illinois'],
+          'Concord': ['New Hampshire','Massachusetts'],
+          'Springfield': ['Massachusetts', 'Illinois']
+          }),
+    ])
+    def test_eval3(test_input, expected):
+>       assert question_third_solution(test_input) == expected
+E       AssertionError: assert None == {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+E        +  where None = question_third_solution({'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']})
+
+test_student.py:27: AssertionError
+_______________________________________________________________ test_eval4[()({})[]{}-True] ________________________________________________________________
+
+test_input = '()({})[]{}', expected = True
+
+    @pytest.mark.parametrize("test_input, expected", [("()({})[]{}", True)])
+    def test_eval4(test_input, expected):
+>       assert question_fourth_solution(test_input) == expected
+E       AssertionError: assert None == True
+E        +  where None = question_fourth_solution('()({})[]{}')
+
+test_student.py:31: AssertionError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+ test_eval6[\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_search(l,key):\n    for value in l:\n        if key == value:\n            return True #Return True is key exist\n    else:\n        return False #Return False if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n-10] 
+
+test_input = '\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_searc...se if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n'
+expected = 10
+
+    @pytest.mark.parametrize("test_input, expected",
+    [(
+    """
+    #Linear search implementation
+    #Takes list and a key as input and returns True or False as answer
+    def linear_search(l,key):
+        for value in l:
+            if key == value:
+                return True #Return True is key exist
+        else:
+            return False #Return False if key does not exist
+    
+    
+    l = [100,200,300,400,500,600]
+    key = 500
+    result = linear_search(l,key)
+    print(result)
+    """,
+    10
+    )])
+    def test_eval6(test_input, expected):
+>       assert question_sixth_solution(test_input) == expected
+E       AssertionError: assert None == 10
+E        +  where None = question_sixth_solution('\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_searc...se if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n')
+
+test_student.py:58: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+================================================================ 10 failed in 0.09 seconds =================================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py FFFFFFFFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+_______________________________________________________________ test_eval1[9999335533-zeke] ________________________________________________________________
+
+test_input = 9999335533, expected = 'zeke'
+
+    @pytest.mark.parametrize("test_input, expected", [(9999335533, 'zeke')])
+    def test_eval1(test_input, expected):
+>       assert question_first_solution(test_input)== expected
+E       AssertionError: assert None == 'zeke'
+E        +  where None = question_first_solution(9999335533)
+
+test_student.py:6: AssertionError
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+____________________________________________________________ test_eval3[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']}
+expected = {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+
+    @pytest.mark.parametrize("test_input, expected",
+    [
+        ({'New Hampshire': ['Concord', 'Hanover'],
+          'Massachusetts': ['Boston', 'Concord',
+          'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']
+         },
+         {'Hanover': ['New Hampshire'],
+          'Chicago': ['Illinois'],
+          'Boston': ['Massachusetts'],
+          'Peoria': ['Illinois'],
+          'Concord': ['New Hampshire','Massachusetts'],
+          'Springfield': ['Massachusetts', 'Illinois']
+          }),
+    ])
+    def test_eval3(test_input, expected):
+>       assert question_third_solution(test_input) == expected
+E       AssertionError: assert None == {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+E        +  where None = question_third_solution({'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']})
+
+test_student.py:27: AssertionError
+_______________________________________________________________ test_eval4[()({})[]{}-True] ________________________________________________________________
+
+test_input = '()({})[]{}', expected = True
+
+    @pytest.mark.parametrize("test_input, expected", [("()({})[]{}", True)])
+    def test_eval4(test_input, expected):
+>       assert question_fourth_solution(test_input) == expected
+E       AssertionError: assert None == True
+E        +  where None = question_fourth_solution('()({})[]{}')
+
+test_student.py:31: AssertionError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+ test_eval6[\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_search(l,key):\n    for value in l:\n        if key == value:\n            return True #Return True is key exist\n    else:\n        return False #Return False if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n-10] 
+
+test_input = '\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_searc...se if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n'
+expected = 10
+
+    @pytest.mark.parametrize("test_input, expected",
+    [(
+    """
+    #Linear search implementation
+    #Takes list and a key as input and returns True or False as answer
+    def linear_search(l,key):
+        for value in l:
+            if key == value:
+                return True #Return True is key exist
+        else:
+            return False #Return False if key does not exist
+    
+    
+    l = [100,200,300,400,500,600]
+    key = 500
+    result = linear_search(l,key)
+    print(result)
+    """,
+    10
+    )])
+    def test_eval6(test_input, expected):
+>       assert question_sixth_solution(test_input) == expected
+E       AssertionError: assert None == 10
+E        +  where None = question_sixth_solution('\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_searc...se if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n')
+
+test_student.py:58: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+================================================================ 10 failed in 0.07 seconds =================================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .FFFFFFFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+____________________________________________________________ test_eval3[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']}
+expected = {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+
+    @pytest.mark.parametrize("test_input, expected",
+    [
+        ({'New Hampshire': ['Concord', 'Hanover'],
+          'Massachusetts': ['Boston', 'Concord',
+          'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']
+         },
+         {'Hanover': ['New Hampshire'],
+          'Chicago': ['Illinois'],
+          'Boston': ['Massachusetts'],
+          'Peoria': ['Illinois'],
+          'Concord': ['New Hampshire','Massachusetts'],
+          'Springfield': ['Massachusetts', 'Illinois']
+          }),
+    ])
+    def test_eval3(test_input, expected):
+>       assert question_third_solution(test_input) == expected
+E       AssertionError: assert None == {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+E        +  where None = question_third_solution({'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']})
+
+test_student.py:27: AssertionError
+_______________________________________________________________ test_eval4[()({})[]{}-True] ________________________________________________________________
+
+test_input = '()({})[]{}', expected = True
+
+    @pytest.mark.parametrize("test_input, expected", [("()({})[]{}", True)])
+    def test_eval4(test_input, expected):
+>       assert question_fourth_solution(test_input) == expected
+E       AssertionError: assert None == True
+E        +  where None = question_fourth_solution('()({})[]{}')
+
+test_student.py:31: AssertionError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+ test_eval6[\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_search(l,key):\n    for value in l:\n        if key == value:\n            return True #Return True is key exist\n    else:\n        return False #Return False if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n-10] 
+
+test_input = '\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_searc...se if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n'
+expected = 10
+
+    @pytest.mark.parametrize("test_input, expected",
+    [(
+    """
+    #Linear search implementation
+    #Takes list and a key as input and returns True or False as answer
+    def linear_search(l,key):
+        for value in l:
+            if key == value:
+                return True #Return True is key exist
+        else:
+            return False #Return False if key does not exist
+    
+    
+    l = [100,200,300,400,500,600]
+    key = 500
+    result = linear_search(l,key)
+    print(result)
+    """,
+    10
+    )])
+    def test_eval6(test_input, expected):
+>       assert question_sixth_solution(test_input) == expected
+E       AssertionError: assert None == 10
+E        +  where None = question_sixth_solution('\n#Linear search implementation\n#Takes list and a key as input and returns True or False as answer\ndef linear_searc...se if key does not exist\n\n\nl = [100,200,300,400,500,600]\nkey = 500\nresult = linear_search(l,key)\nprint(result)\n')
+
+test_student.py:58: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 9 failed, 1 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .FFFF.FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+____________________________________________________________ test_eval3[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']}
+expected = {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+
+    @pytest.mark.parametrize("test_input, expected",
+    [
+        ({'New Hampshire': ['Concord', 'Hanover'],
+          'Massachusetts': ['Boston', 'Concord',
+          'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']
+         },
+         {'Hanover': ['New Hampshire'],
+          'Chicago': ['Illinois'],
+          'Boston': ['Massachusetts'],
+          'Peoria': ['Illinois'],
+          'Concord': ['New Hampshire','Massachusetts'],
+          'Springfield': ['Massachusetts', 'Illinois']
+          }),
+    ])
+    def test_eval3(test_input, expected):
+>       assert question_third_solution(test_input) == expected
+E       AssertionError: assert None == {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+E        +  where None = question_third_solution({'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']})
+
+test_student.py:27: AssertionError
+_______________________________________________________________ test_eval4[()({})[]{}-True] ________________________________________________________________
+
+test_input = '()({})[]{}', expected = True
+
+    @pytest.mark.parametrize("test_input, expected", [("()({})[]{}", True)])
+    def test_eval4(test_input, expected):
+>       assert question_fourth_solution(test_input) == expected
+E       AssertionError: assert None == True
+E        +  where None = question_fourth_solution('()({})[]{}')
+
+test_student.py:31: AssertionError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 8 failed, 2 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .FFFF.FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+____________________________________________________________ test_eval3[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']}
+expected = {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+
+    @pytest.mark.parametrize("test_input, expected",
+    [
+        ({'New Hampshire': ['Concord', 'Hanover'],
+          'Massachusetts': ['Boston', 'Concord',
+          'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']
+         },
+         {'Hanover': ['New Hampshire'],
+          'Chicago': ['Illinois'],
+          'Boston': ['Massachusetts'],
+          'Peoria': ['Illinois'],
+          'Concord': ['New Hampshire','Massachusetts'],
+          'Springfield': ['Massachusetts', 'Illinois']
+          }),
+    ])
+    def test_eval3(test_input, expected):
+>       assert question_third_solution(test_input) == expected
+E       AssertionError: assert None == {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+E        +  where None = question_third_solution({'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']})
+
+test_student.py:27: AssertionError
+_______________________________________________________________ test_eval4[()({})[]{}-True] ________________________________________________________________
+
+test_input = '()({})[]{}', expected = True
+
+    @pytest.mark.parametrize("test_input, expected", [("()({})[]{}", True)])
+    def test_eval4(test_input, expected):
+>       assert question_fourth_solution(test_input) == expected
+
+test_student.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+brackets = '()({})[]{}'
+
+    def question_fourth_solution(brackets):
+        open_tup = tuple('({[')
+        close_tup = tuple(')}]')
+        map = dict(zip(open_tup, close_tup))
+        queue = []
+    
+>       for i in expression:
+E       NameError: name 'expression' is not defined
+
+a01.py:49: NameError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 8 failed, 2 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .FF.F.FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+____________________________________________________________ test_eval3[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']}
+expected = {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+
+    @pytest.mark.parametrize("test_input, expected",
+    [
+        ({'New Hampshire': ['Concord', 'Hanover'],
+          'Massachusetts': ['Boston', 'Concord',
+          'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']
+         },
+         {'Hanover': ['New Hampshire'],
+          'Chicago': ['Illinois'],
+          'Boston': ['Massachusetts'],
+          'Peoria': ['Illinois'],
+          'Concord': ['New Hampshire','Massachusetts'],
+          'Springfield': ['Massachusetts', 'Illinois']
+          }),
+    ])
+    def test_eval3(test_input, expected):
+>       assert question_third_solution(test_input) == expected
+E       AssertionError: assert None == {'Boston': ['Massachusetts'], 'Chicago': ['Illinois'], 'Concord': ['New Hampshire', 'Massachusetts'], 'Hanover': ['New Hampshire'], ...}
+E        +  where None = question_third_solution({'Illinois': ['Chicago', 'Springfield', 'Peoria'], 'Massachusetts': ['Boston', 'Concord', 'Springfield'], 'New Hampshire': ['Concord', 'Hanover']})
+
+test_student.py:27: AssertionError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 7 failed, 3 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F..F.FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_____________________________________________________________________ test_eval5[5-V] ______________________________________________________________________
+
+test_input = 5, expected = 'V'
+
+    @pytest.mark.parametrize("test_input, expected", [(5, 'V')])
+    def test_eval5(test_input, expected):
+>       assert question_fifth_solution(test_input) == expected
+E       AssertionError: assert None == 'V'
+E        +  where None = question_fifth_solution(5)
+
+test_student.py:35: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 6 failed, 4 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+
+test_student.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'ABC23'
+
+    def question_seventh_solution(string):
+        def password_strength(password):
+    
+            special_chars = ('!','@','#','$','&')
+    
+            hasLower = False
+            hasUpper = False
+            hasDigit = False
+            specialChar = False
+    
+            res = []
+            count = 0
+    
+            for idx in password:
+                if idx.islower():
+                    hasLower = True
+                    continue
+    
+                if idx.isupper():
+                    hasUpper = True
+                    continue
+    
+                if idx.isdigit():
+                    hasDigit = True
+                    continue
+    
+                if idx in special_chars:
+                    specialChar = True
+                else:
+                    count += 1
+    
+            if count > 0:
+                specialChar = False
+    
+            if len(password) < 8:
+                if hasLower and hasUpper and hasDigit and specialChar:
+                    res.extend(["InValid",["The length of the password must be at least 8 characters in length"]])
+                else:
+                    res.extend(["InValid",["The length of the password must be at least 8 characters in length","The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 capital letter"]])
+                return res
+    
+            if hasLower and hasUpper and hasDigit and specialChar:
+                res.extend(['Valid',[]])
+    
+            elif hasLower and hasDigit:
+                res.extend(["InValid",["The length of the password must be at least 8 characters in length","The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 capital letter"]])
+    
+            elif not specialChar and not hasDigit:
+                res.extend(["InValid",["The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 digit"]])
+    
+            return res
+    
+>       password_strength(password)
+E       NameError: name 'password' is not defined
+
+a01.py:164: NameError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.5, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/pavan/Documents/edYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1, inifile:
+plugins: remotedata-0.3.0, openfiles-0.3.0, doctestplus-0.1.3, arraydiff-0.2
+collected 10 items
+
+test_student.py .F....FFFF                                                                                                                           [100%]
+
+========================================================================= FAILURES =========================================================================
+____________________________________________________________ test_eval2[test_input0-expected0] _____________________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________________ test_eval7[ABC23-expected0] ________________________________________________________________
+
+test_input = 'ABC23', expected = ('InValid', ['The length of the password must be at least 8 characters in length'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('InValid', ['The length of the password must be at least 8 characters in length'])
+E        +  where None = question_seventh_solution('ABC23')
+
+test_student.py:62: AssertionError
+_________________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] __________________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, [])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert None == (True, [])
+E        +  where None = question_eighth_solution('An important part of my life has been the people who stood by me.')
+
+test_student.py:66: AssertionError
+___________________________________________________________ test_eval9[test_input10-4-expected0] ___________________________________________________________
+
+test_input1 = {1, 2, 3, 4, 5}, test_input2 = 4, expected = [4, 3, 2, 5]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+    def test_eval9(test_input1, test_input2, expected):
+>       assert question_ninth_solution(test_input1, test_input2) == expected
+E       assert None == [4, 3, 2, 5]
+E        +  where None = question_ninth_solution({1, 2, 3, 4, 5}, 4)
+
+test_student.py:70: AssertionError
+____________________________________________________________ test_eval10[test_input0-expected0] ____________________________________________________________
+
+test_input = [1, 3, 5, 4, 2], expected = (2, [1, 3, 5])
+
+    @pytest.mark.parametrize("test_input, expected", [([1, 3, 5, 4, 2], (2, [1, 3, 5]))])
+    def test_eval10(test_input, expected):
+>       assert question_tenth_solution(test_input) == expected
+E       assert None == (2, [1, 3, 5])
+E        +  where None = question_tenth_solution([1, 3, 5, 4, 2])
+
+test_student.py:74: AssertionError
+============================================================ 5 failed, 5 passed in 0.06 seconds ============================================================
