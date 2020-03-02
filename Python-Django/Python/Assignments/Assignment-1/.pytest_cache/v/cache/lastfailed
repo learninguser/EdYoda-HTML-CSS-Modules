@@ -1,7 +1,0 @@
-{
-  "test_student.py::test_eval10[test_input0-expected0]": true,
-  "test_student.py::test_eval2[test_input0-expected0]": true,
-  "test_student.py::test_eval7[ABC23-expected0]": true,
-  "test_student.py::test_eval8[An important part of my life has been the people who stood by me.-expected0]": true,
-  "test_student.py::test_eval9[test_input10-4-expected0]": true
-}
