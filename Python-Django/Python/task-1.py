@@ -13,6 +13,7 @@
 #         count = count + 1
 #         if count == 3:
 #             break
+<<<<<<< HEAD
 
 
 # s = "Python is easy to learn"
@@ -151,3 +152,15 @@ def gen_password(length):
     return password
 
 print(gen_password(5))
+=======
+l1 = [[1,2,3],[4,5,6],[7,8,9]]
+l2 = [[100,200,300],[400,500,600],[700,800,900]]
+l4 = []
+
+for idx in range(len(l1)):
+    l3 = []
+    for idy in range(len(l1[0])):
+        l3.append(l2[idx][idy] + l1[idx][idy])
+    l4.append(l3)
+print(l4)
+>>>>>>> 461aeba8cca41c615d37d76baa64c273a8676409
