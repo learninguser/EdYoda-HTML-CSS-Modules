@@ -1,0 +1,12 @@
+[
+  "test_student.py::test_eval1[9999335533-zeke]",
+  "test_student.py::test_eval2[test_input0-expected0]",
+  "test_student.py::test_eval3[test_input0-expected0]",
+  "test_student.py::test_eval4[()({})[]{}-True]",
+  "test_student.py::test_eval5[5-V]",
+  "test_student.py::test_eval6[\\n#Linear search implementation\\n#Takes list and a key as input and returns True or False as answer\\ndef linear_search(l,key):\\n    for value in l:\\n        if key == value:\\n            return True #Return True is key exist\\n    else:\\n        return False #Return False if key does not exist\\n\\n\\nl = [100,200,300,400,500,600]\\nkey = 500\\nresult = linear_search(l,key)\\nprint(result)\\n-10]",
+  "test_student.py::test_eval7[ABC23-expected0]",
+  "test_student.py::test_eval8[An important part of my life has been the people who stood by me.-expected0]",
+  "test_student.py::test_eval9[test_input10-4-expected0]",
+  "test_student.py::test_eval10[test_input0-expected0]"
+]
