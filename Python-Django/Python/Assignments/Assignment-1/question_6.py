@@ -11,7 +11,7 @@ def question_sixth_solution(code):
 code = """
 #Linear search implementation
 #Takes list and a key as input and returns True or False as answer
-"Time complexity is O(n)"
+'''Time complexity is O(n)'''
 
 @classmethod
 def linear_search(l,key):

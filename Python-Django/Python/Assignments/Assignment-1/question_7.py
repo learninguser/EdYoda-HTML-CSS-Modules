@@ -52,7 +52,7 @@ def password_strength(password):
     #     return (["InValid",["The length of the password must be at least 8 characters in length"]])
 
     elif hasLower and hasUpper and hasDigit and specialChar:
-        res[0] = "Valid"
+        res[0] = str("Valid")
 
     else:
         res[0] = "InValid"

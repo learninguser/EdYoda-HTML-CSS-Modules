@@ -57,15 +57,15 @@ print(result)
 def test_eval6(test_input, expected):
     assert question_sixth_solution(test_input) == expected
 
-@pytest.mark.parametrize("test_input, expected", [('ABC23', ("InValid",["The length of the password must be at least 8 characters in length"]))])
+@pytest.mark.parametrize("test_input, expected", [("Abcd@1234", ("Valid",[]))])
 def test_eval7(test_input, expected):
     assert question_seventh_solution(test_input) == expected
 
-@pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,[]))])
+@pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,['Your sentence is syntactically correct!']))])
 def test_eval8(test_input, expected):
     assert question_eighth_solution(test_input) == expected
 
-@pytest.mark.parametrize("test_input1, test_input2, expected", [({1, 4, 3, 2, 5}, 4, [4, 3, 2, 5])])
+@pytest.mark.parametrize("test_input1, test_input2, expected", [([1, 4, 3, 2, 5], 4, [4, 3, 2, 5])])
 def test_eval9(test_input1, test_input2, expected):
     assert question_ninth_solution(test_input1, test_input2) == expected
 

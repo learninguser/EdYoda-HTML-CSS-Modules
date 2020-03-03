@@ -2301,3 +2301,47 @@ E         Use -v to get the full diff
 
 test_student.py:70: AssertionError
 =================================================================== 3 failed, 7 passed in 0.06s ===================================================================
+============================================================= test session starts ==============================================================
+platform linux -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /home/pavan/Documents/EdYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1
+collected 10 items
+
+test_student.py .F....FF..                                                                                                               [100%]
+
+=================================================================== FAILURES ===================================================================
+______________________________________________________ test_eval2[test_input0-expected0] _______________________________________________________
+
+test_input = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+expected = {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+
+    @pytest.mark.parametrize("test_input, expected", [({"Chennai":"Banglore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}, {'Bombay': 'Delhi', 'Delhi': 'Goa', 'Goa': 'Chennai', 'Chennai': 'Banglore'})])
+    def test_eval2(test_input, expected):
+>       assert question_second_solution(test_input) == expected
+E       AssertionError: assert None == {'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'}
+E        +  where None = question_second_solution({'Bombay': 'Delhi', 'Chennai': 'Banglore', 'Delhi': 'Goa', 'Goa': 'Chennai'})
+
+test_student.py:10: AssertionError
+_______________________________________________________ test_eval7[Abcd@1234-expected0] ________________________________________________________
+
+test_input = 'Abcd@1234', expected = ('Valid', [])
+
+    @pytest.mark.parametrize("test_input, expected", [("Abcd@1234", ("Valid",[]))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert None == ('Valid', [])
+E        +  where None = question_seventh_solution('Abcd@1234')
+
+test_student.py:62: AssertionError
+___________________________ test_eval8[An important part of my life has been the people who stood by me.-expected0] ____________________________
+
+test_input = 'An important part of my life has been the people who stood by me.', expected = (True, ['Your sentence is syntactically correct!'])
+
+    @pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,['Your sentence is syntactically correct!']))])
+    def test_eval8(test_input, expected):
+>       assert question_eighth_solution(test_input) == expected
+E       AssertionError: assert (True, []) == (True, ['Your...ly correct!'])
+E         At index 1 diff: [] != ['Your sentence is syntactically correct!']
+E         Use -v to get the full diff
+
+test_student.py:66: AssertionError
+========================================================= 3 failed, 7 passed in 0.20s ==========================================================

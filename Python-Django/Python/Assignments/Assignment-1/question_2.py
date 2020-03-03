@@ -27,7 +27,9 @@ def travel_sequence(travel_trip):
     return trip
 
 # print(travel_sequence({"A":"C","C":"D","E":"G","D":"E","G":"F"}))
-print(travel_sequence({"X":"Z","Z":"U","A":"B","B":"X"}))
+# print(travel_sequence({"X":"Z","Z":"U","A":"B","B":"X"}))
+
+print(travel_sequence({"A":"C","C":"D","E":"G","D":"E","G":"F"}))
 
 
 # trip = {}

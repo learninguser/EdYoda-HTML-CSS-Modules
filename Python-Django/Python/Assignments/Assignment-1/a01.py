@@ -24,8 +24,10 @@ def question_first_solution(input_seq): # complete
     for idx, value in enumerate(split_text):
         val = list(set(value.strip()))
         possibilites = digit_mapping[val[0]]
+
         if len(value.strip()) > len(possibilites):
             diff = abs(len(value.strip()) - len(possibilites)) - 1
+            decoded += possibilites[len(split_text[idx].strip()) - 2]
             decoded += possibilites[diff]
         else:
             decoded += possibilites[len(split_text[idx].strip()) - 1]
@@ -58,7 +60,7 @@ def question_second_solution(tickets): # complete but test cases are incorrect
                 start_trip = travel_trip[start_trip]
 
         return trip
-    travel_sequence(tickets)
+    return travel_sequence(tickets)
 
 def question_third_solution(states): # complete
     # Write your code here
@@ -126,14 +128,16 @@ def question_fifth_solution(number): # complete
     return int_roman(number)
 
 def question_sixth_solution(code): # complete
-    count = 0
-    str_split = code.split('\n')
-    for value in str_split:
-        if value == '' or value.startswith('#'):
-            continue
-        else:
-            count += 1
-    return count
+    def question_six(code):
+        count = 0
+        str_split = code.split('\n')
+        for value in str_split:
+            if value == '' or value.startswith('#'):
+                continue
+            else:
+                count += 1
+        return count
+    return question_six(code)
 
 def question_seventh_solution(string): # complete but test cases are incorrect
 
@@ -224,24 +228,25 @@ def question_eighth_solution(string): # complete
 
         if '' in string_split:
             res[0] = False
-            res[1].append("Two continuous spaces are not allowed.")
+            res[1].append("Continuous spaces are not allowed.")
         else:
             no_space = True
 
-        if count > 1:
-            res[0] = False
-            res[1].append("Two continuous uppercase characters are not allowed.")
-        else:
-            no_upper = True
-
         if string[-1] != '.':
             res[0] = False
-            res[1].append("the sentence must end with a full stop(.)")
+            res[1].append("Sentence must end with a full-stop.")
         else:
             end_str = True
 
+        if count > 1:
+            res[0] = False
+            res[1].append("Continuous uppercase characters are not allowed.")
+        else:
+            no_upper = True
+
         if no_space and no_upper and end_str:
             res[0] = True
+            res[1].append("Your sentence is syntactically correct!")
 
         return tuple(res)
 

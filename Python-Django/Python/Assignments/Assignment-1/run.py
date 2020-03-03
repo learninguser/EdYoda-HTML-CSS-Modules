@@ -24,7 +24,7 @@ except:
 logging.basicConfig(level=logging.DEBUG)
 
 
-url = "http://13.232.63.219:8000/autograde/api/"
+url = "http://13.233.145.80:8000/autograde/api/"
 
 def touch(fname, times=None):
     with open(fname, 'a'):
