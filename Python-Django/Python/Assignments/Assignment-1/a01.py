@@ -167,14 +167,25 @@ def question_seventh_solution(string): # not yet complete
 
     password_strength(string)
 
-
 def question_eighth_solution(string):
     # Write your code here
     pass
 
 def question_ninth_solution(arr, k):
-    # Write your code here
-    pass
+    def findSubarray(a, k, n): 
+        vec=[] 
+        for i in range(n-k+1): 
+            temp=[] 
+            for j in range(i,i+k): 
+                temp.append(a[j]) 
+            vec.append(temp) 
+    
+        vec=sorted(vec) 
+    
+        return vec[len(vec) - 1]
+    
+    return findSubarray(list(arr), k, len(arr))
+
 
 def question_tenth_solution(nums):
     # Write your code here
