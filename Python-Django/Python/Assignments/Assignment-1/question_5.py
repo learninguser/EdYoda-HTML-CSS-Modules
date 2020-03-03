@@ -1,22 +1,24 @@
-given_int = 5
+def int_roman(num):
+    val = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+        ]
+    syb = [
+        "M", "CM", "D", "CD",
+        "C", "XC", "L", "XL",
+        "X", "IX", "V", "IV",
+        "I"
+        ]
 
-if given_int == 1:
-    roman = 'I'
-elif given_int == 2:
-    roman = "II"
-elif given_int == 3:
-    roman = "III"
-elif given_int == 4:
-    roman = "IV"
-elif given_int == 5:
-    roman = "V"
-elif given_int == 6:
-    roman = "VI"
-elif given_int == 7:
-    roman = "VII"
-elif given_int == 8:
-    roman = "VIII"
-elif given_int == 9:
-    roman = "IX"
+    roman_num = ''
+    i = 0
+    while  num > 0:
+        for _ in range(num // val[i]):
+            roman_num += syb[i]
+            num -= val[i]
+        i += 1
+    return roman_num
 
-print(given_int)
+print(int_roman(150))

@@ -1,31 +1,34 @@
-# def min_elimination(n, arr): 
-#     countOdd = 0 
-#     for i in range(n):  
-#         if (arr[i] % 2): 
-#             countOdd += 1
-#     return min(countOdd, n - countOdd)
+def adj_sum_even(arr):
+    even_copy = arr.copy()
+    odd_copy = arr.copy()
 
+    even_count = 0
+    odd_count = 0
 
-# arr = [1,4,3,6,8,5,7]
-# n = len(arr)
-# print(min_elimination(n,arr))
-
-def check_even(arr):
-    if arr == []:
-        return False
-
-    for idx in range(len(arr)-1):
-        if (arr[idx] + arr[idx + 1]) % 2 == 0:
-            continue    
+    for s in arr:
+        if s % 2 == 0: 
+            even_copy.remove(s)
+            even_count += 1
         else:
-            return check_even(arr[idx +1 :])
+            odd_copy.remove(s)
+            odd_count += 1
+
+    if even_count > odd_count:
+        count = odd_count
+        ans = odd_copy
+    else:
+        count = even_count
+        ans = even_copy
+    return (count, ans)
+
+arr =  [1, 3, 5, 4, 2]
+print(adj_sum_even(arr))
 
 arr = [1,4,3,6,8,5,7]
-# new_list = arr.copy()
-# for idx in range(len(arr)-1):
-#     if (arr[idx] + arr[idx + 1]) % 2 == 0:
-#         continue
-#     else:
-#         new_list.remove(arr[idx])
+print(adj_sum_even(arr))
 
-print(check_even(arr))
+arr = [1,4,2,3,6,5]
+print(adj_sum_even(arr))
+
+arr = [1,2,2,4,3]
+print(adj_sum_even(arr))

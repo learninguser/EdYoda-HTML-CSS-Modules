@@ -1,7 +1,9 @@
-states = {'New Hampshire': ['Concord', 'Hanover'],
-'Massachusetts': ['Boston', 'Concord', 'Springfield'],
-'Illinois': ['Chicago', 'Springfield', 'Peoria']
-}
+# states = {'New Hampshire': ['Concord', 'Hanover'],
+# 'Massachusetts': ['Boston', 'Concord', 'Springfield'],
+# 'Illinois': ['Chicago', 'Springfield', 'Peoria']
+# }
+
+states = {'A':['AA','AB'], 'B':['BB','BC'], 'C':['CC','CD','BB'] }
 
 state = states.keys()
 cities = list(states.values())

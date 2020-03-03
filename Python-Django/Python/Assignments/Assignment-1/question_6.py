@@ -1,66 +1,33 @@
-
-def password_strength(password):
-    
-    special_chars = ('!','@','#','$','&')
-
-    hasLower = False
-    hasUpper = False
-    hasDigit = False
-    specialChar = False
-    
-    res = []
+def question_sixth_solution(code):
     count = 0
-
-    for idx in password:
-        if idx.islower():
-            hasLower = True
+    str_split = code.split('\n')
+    for value in str_split:
+        if value == '' or value.startswith('#'):
             continue
-
-        if idx.isupper():
-            hasUpper = True
-            continue
-
-        if idx.isdigit():
-            hasDigit = True
-            continue
-
-        if idx in special_chars:
-            specialChar = True
         else:
             count += 1
-    
-    if count > 0:
-        specialChar = False
+    return count
 
-    # if len(password) < 8:
-    #     if hasLower and hasUpper and hasDigit and specialChar:
-    #         res.extend(["InValid",["The length of the password must be at least 8 characters in length"]])
-    #     else:
-    #         res.extend(["InValid",["The length of the password must be at least 8 characters in length","The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 capital letter"]])
-    #     return res
+code = """
+#Linear search implementation
+#Takes list and a key as input and returns True or False as answer
+"Time complexity is O(n)"
 
-    if len(password) < 8:
-        return (["InValid",["The length of the password must be at least 8 characters in length"]])
+@classmethod
+def linear_search(l,key):
+    for value in l:
+        if key == value:
+            return True #Return True is key exist
+    else:
+        return False #Return False if key does not exist
 
-    if hasLower and hasUpper and hasDigit and specialChar:
-        res.extend(['Valid',[]])
 
-    elif hasLower and hasDigit:
-        res.extend(["InValid",["The length of the password must be at least 8 characters in length","The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 capital letter"]])
+l = [100,200,300,400,500,600]
+key = 500
+result = linear_search(l,key)
 
-    elif not specialChar and not hasDigit:
-        res.extend(["InValid",["The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 digit"]])
 
-    return res
+print(result)
+"""
 
-password = "ABC23"
-print(password_strength(password))
-
-# password = "Abc@1"
-# print(password_strength(password))
-
-# password = "abc12"
-# print(password_strength(password))
-
-# password = "aBcD**#&"
-# print(password_strength(password))
+print(question_sixth_solution(code))

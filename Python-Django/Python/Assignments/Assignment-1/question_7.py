@@ -1,64 +1,83 @@
-def checkSentence(string): 
-  
-    res = []
+def password_strength(password):
     
-    length = len(string) 
-   
-    if string[0] < 'A' or string[0] > 'Z': 
-        return False
-  
-    if string[length-1] != '.': 
-        return False
-   
-    prev_state = 0
-    curr_state = 0
-  
-    index = 1
-  
-    while (string[index]): 
-   
-        if string[index] >= 'A' and string[index] <= 'Z': 
-            curr_state = 0
-  
-        elif string[index] == ' ': 
-            curr_state = 1
-  
-        elif string[index] >= 'a' and string[index] <= 'z': 
-            curr_state = 2
-  
-        elif string[index] == '.': 
-            curr_state = 3
-  
-        if prev_state == curr_state and curr_state != 2: 
-            return False
-  
-        if prev_state == 2 and curr_state == 0: 
-            return False
-  
-        if curr_state == 3 and prev_state != 1: 
-            return True
-  
-        index += 1
-  
-        prev_state = curr_state 
-  
-    return False
+    special_chars = ('!','@','#','$','&')
 
+    hasLower = False
+    hasUpper = False
+    hasDigit = False
+    specialChar = False
+    
+    res = [[],[]]
+    count = 0
 
-string = "An important  part of my life has been the people who stood by me  ."
+    for idx in password:
+        if idx.islower():
+            hasLower = True
+            continue
 
-str_split = string.split(" ")
+        if idx.isupper():
+            hasUpper = True
+            continue
 
-res = []
+        if idx.isdigit():
+            hasDigit = True
+            continue
 
-if '' in str_split:
-    res.append((False,["Two continuous spaces are not allowed."]))
-if not string.endswith('.'):
-    res.append((False,["the sentence must end with a full stop(.)","Two continuous uppercase characters are not allowed."]))
+        if idx in special_chars:
+            specialChar = True
+        else:
+            count += 1
+    
+    if count > 0:
+        specialChar = False
 
-hasLower = False
-hasUpper = False
+    if len(password) < 8:
+        if hasLower and hasUpper and hasDigit and specialChar:
+            res[0] = "InValid"
+            res[1].append("The length of the password must be at least 8 characters in length")
+        else:
+            res[0] = "InValid"
+            res[1].append("The length of the password must be at least 8 characters in length")
+            if not specialChar:
+                res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
+            if not hasUpper:
+                res[1].append("The password must contain at least 1 capital letter")
+            if not hasLower:
+                res[1].append("The password must contain at least 1 lower case letter")
+            if not hasDigit:
+                res[1].append("The password must contain at least 1 digit")
+        return tuple(res)
 
-res = checkSentence(string)
+    # if len(password) < 8:
+    #     return (["InValid",["The length of the password must be at least 8 characters in length"]])
 
-print(res)
+    elif hasLower and hasUpper and hasDigit and specialChar:
+        res[0] = "Valid"
+
+    else:
+        res[0] = "InValid"
+        if not specialChar:
+            res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
+        if not hasUpper:
+            res[1].append("The password must contain at least 1 capital letter")
+        if not hasLower:
+            res[1].append("The password must contain at least 1 lower case letter")
+        if not hasDigit:
+            res[1].append("The password must contain at least 1 digit")
+    
+    return tuple(res)
+
+# password = "ABC23"
+# print(password_strength(password))
+
+password = "Abcd@1234"
+print(password_strength(password))
+
+password = "Abc@1"
+print(password_strength(password))
+
+password = "abc12"
+print(password_strength(password))
+
+password = "aBcD**#&"
+print(password_strength(password))

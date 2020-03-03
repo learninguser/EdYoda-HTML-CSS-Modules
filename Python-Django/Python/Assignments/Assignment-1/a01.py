@@ -1,6 +1,6 @@
 # don't change any function name write you all code inside the function only for every question solution and return you output as mentioned in problem statement.
 
-def question_first_solution(input_seq):
+def question_first_solution(input_seq): # complete
     def splitterz(txt):
         return (''.join(x + ('' if x == nxt else ', ') 
                 for x, nxt in zip(txt, txt[1:] + txt[-1])))
@@ -32,7 +32,7 @@ def question_first_solution(input_seq):
     
     return decoded
 
-def question_second_solution(tickets):
+def question_second_solution(tickets): # complete but test cases are incorrect
     def travel_sequence(travel_trip):
 
         keys = set(travel_trip.keys())
@@ -60,7 +60,7 @@ def question_second_solution(tickets):
         return trip
     travel_sequence(tickets)
 
-def question_third_solution(states):
+def question_third_solution(states): # complete
     # Write your code here
     cities = list(states.values())
 
@@ -84,7 +84,7 @@ def question_third_solution(states):
                 output[val].append(value[0])
     return output
 
-def question_fourth_solution(brackets):
+def question_fourth_solution(brackets): # complete
     open_tup = tuple('({[') 
     close_tup = tuple(')}]') 
     map = dict(zip(open_tup, close_tup)) 
@@ -98,31 +98,34 @@ def question_fourth_solution(brackets):
                 return False
     return True
 
-def question_fifth_solution(number): # need to work on this
+def question_fifth_solution(number): # complete
     # Write your code here
-    given_int = number
+    def int_roman(num):
+        val = [
+                1000, 900, 500, 400,
+                100, 90, 50, 40,
+                10, 9, 5, 4,
+                1
+            ]
+        syb = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+            ]
 
-    if given_int == 1:
-        roman = 'I'
-    elif given_int == 2:
-        roman = "II"
-    elif given_int == 3:
-        roman = "III"
-    elif given_int == 4:
-        roman = "IV"
-    elif given_int == 5:
-        roman = "V"
-    elif given_int == 6:
-        roman = "VI"
-    elif given_int == 7:
-        roman = "VII"
-    elif given_int == 8:
-        roman = "VIII"
-    elif given_int == 9:
-        roman = "IX"
-    return roman
+        roman_num = ''
+        i = 0
+        while  num > 0:
+            for _ in range(num // val[i]):
+                roman_num += syb[i]
+                num -= val[i]
+            i += 1
+        return roman_num
 
-def question_sixth_solution(code): 
+    return int_roman(number)
+
+def question_sixth_solution(code): # complete
     count = 0
     str_split = code.split('\n')
     for value in str_split:
@@ -132,7 +135,7 @@ def question_sixth_solution(code):
             count += 1
     return count
 
-def question_seventh_solution(string): # not yet complete
+def question_seventh_solution(string): # complete but test cases are incorrect
 
     def password_strength(password):
     
@@ -143,7 +146,7 @@ def question_seventh_solution(string): # not yet complete
         hasDigit = False
         specialChar = False
         
-        res = []
+        res = [[],[]]
         count = 0
 
         for idx in password:
@@ -167,49 +170,124 @@ def question_seventh_solution(string): # not yet complete
         if count > 0:
             specialChar = False
 
-        # if len(password) < 8:
-        #     if hasLower and hasUpper and hasDigit and specialChar:
-        #         res.extend(["InValid",["The length of the password must be at least 8 characters in length"]])
-        #     else:
-        #         res.extend(["InValid",["The length of the password must be at least 8 characters in length","The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 capital letter"]])
-        #     return res
-
         if len(password) < 8:
-            return ("InValid",['The length of the password must be at least 8 characters in length'])
+            if hasLower and hasUpper and hasDigit and specialChar:
+                res[0] = "InValid"
+                res[1].append("The length of the password must be at least 8 characters in length")
+            else:
+                res[0] = "InValid"
+                res[1].append("The length of the password must be at least 8 characters in length")
+                if not specialChar:
+                    res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
+                if not hasUpper:
+                    res[1].append("The password must contain at least 1 capital letter")
+                if not hasLower:
+                    res[1].append("The password must contain at least 1 lower case letter")
+                if not hasDigit:
+                    res[1].append("The password must contain at least 1 digit")
+            return tuple(res)
 
-        if hasLower and hasUpper and hasDigit and specialChar:
-            res.extend(['Valid',[]])
+        # if len(password) < 8:
+        #     return (["InValid",["The length of the password must be at least 8 characters in length"]])
 
-        elif hasLower and hasDigit:
-            res.extend(["InValid",["The length of the password must be at least 8 characters in length","The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 capital letter"]])
+        elif hasLower and hasUpper and hasDigit and specialChar:
+            res[0] = "Valid"
 
-        elif not specialChar and not hasDigit:
-            res.extend(["InValid",["The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)","The password must contain at least 1 digit"]])
-
-        return res
+        else:
+            res[0] = "InValid"
+            if not specialChar:
+                res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
+            if not hasUpper:
+                res[1].append("The password must contain at least 1 capital letter")
+            if not hasLower:
+                res[1].append("The password must contain at least 1 lower case letter")
+            if not hasDigit:
+                res[1].append("The password must contain at least 1 digit")
+        
+        return tuple(res)
 
     password_strength(string)
 
-def question_eighth_solution(string):
-    # Write your code here
-    pass
+def question_eighth_solution(string): # complete
 
-def question_ninth_solution(arr, k):
-    def findSubarray(a, k, n): 
+    def check_sentence(string):
+        res = [[],[]]
+        count = 0
+
+        end_str, no_space ,no_upper = False, False, False
+
+        for i in string:
+            if(i.isupper()):
+                count += 1
+
+        string_split = string.split(' ')
+
+        if '' in string_split:
+            res[0] = False
+            res[1].append("Two continuous spaces are not allowed.")
+        else:
+            no_space = True
+
+        if count > 1:
+            res[0] = False
+            res[1].append("Two continuous uppercase characters are not allowed.")
+        else:
+            no_upper = True
+
+        if string[-1] != '.':
+            res[0] = False
+            res[1].append("the sentence must end with a full stop(.)")
+        else:
+            end_str = True
+
+        if no_space and no_upper and end_str:
+            res[0] = True
+
+        return tuple(res)
+
+    return check_sentence(string)
+
+def question_ninth_solution(arr, k): # complete but test cases are incorrect
+    def findSubarray(a, k): 
         vec=[] 
-        for i in range(n-k+1): 
+        for i in range(len(a) - k + 1): 
             temp=[] 
-            for j in range(i,i+k): 
+            for j in range(i, i + k): 
                 temp.append(a[j]) 
-            vec.append(temp) 
-    
-        vec=sorted(vec) 
-    
-        return vec[len(vec) - 1]
-    
-    return findSubarray(list(arr), k, len(arr))
+            vec.append(temp)  
+        
+        ans = vec[0]
+        
+        for idx in range(1, len(vec)):
+            if vec[idx] > ans:
+                ans = vec[idx]
+        
+        return ans
 
+    return findSubarray(list(arr), k)
 
-def question_tenth_solution(nums):
-    # Write your code here
-    pass
+def question_tenth_solution(nums): # complete
+    def adj_sum_even(arr):
+        even_copy = arr.copy()
+        odd_copy = arr.copy()
+
+        even_count = 0
+        odd_count = 0
+
+        for s in arr:
+            if s % 2 == 0: 
+                even_copy.remove(s)
+                even_count += 1
+            else:
+                odd_copy.remove(s)
+                odd_count += 1
+
+        if even_count > odd_count:
+            count = odd_count
+            ans = odd_copy
+        else:
+            count = even_count
+            ans = even_copy
+        return (count, ans)
+
+    return (adj_sum_even(nums))

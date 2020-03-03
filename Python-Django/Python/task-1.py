@@ -13,7 +13,7 @@
 #         count = count + 1
 #         if count == 3:
 #             break
-<<<<<<< HEAD
+
 # l1 = [[1,2,3],[4,5,6],[7,8,9]]
 # l2 = [[100,200,300],[400,500,600],[700,800,900]]
 # l4 = []
@@ -93,9 +93,6 @@ def gen_password():
 
 if __name__ == "__main__":
     print(gen_password())
-=======
-<<<<<<< HEAD
-
 
 # s = "Python is easy to learn"
 # s1 = "Python is Easy to Learn"
@@ -217,32 +214,29 @@ if __name__ == "__main__":
 #     if idx[1] < pass_mark:
 #         print(idx[0])
 
-import random
+# import random
 
-def gen_password(length):
-    upper = chr(random.randint(ord('A'),ord('Z')))
-    lower = chr(random.randint(ord('a'),ord('z')))
+# def gen_password(length):
+#     upper = chr(random.randint(ord('A'),ord('Z')))
+#     lower = chr(random.randint(ord('a'),ord('z')))
 
-    chars = ['!','&','%','$','#']
-    special = random.choice(chars)
+#     chars = ['!','&','%','$','#']
+#     special = random.choice(chars)
 
-    digits = str(random.randint(10000,99999))
+#     digits = str(random.randint(10000,99999))
 
-    password = ''.join([upper, lower, special, digits])
-    password = ''.join(random.sample(password, length))
-    return password
+#     password = ''.join([upper, lower, special, digits])
+#     password = ''.join(random.sample(password, length))
+#     return password
 
-print(gen_password(5))
-=======
-l1 = [[1,2,3],[4,5,6],[7,8,9]]
-l2 = [[100,200,300],[400,500,600],[700,800,900]]
-l4 = []
+# print(gen_password(5))
+# l1 = [[1,2,3],[4,5,6],[7,8,9]]
+# l2 = [[100,200,300],[400,500,600],[700,800,900]]
+# l4 = []
 
-for idx in range(len(l1)):
-    l3 = []
-    for idy in range(len(l1[0])):
-        l3.append(l2[idx][idy] + l1[idx][idy])
-    l4.append(l3)
-print(l4)
->>>>>>> 461aeba8cca41c615d37d76baa64c273a8676409
->>>>>>> 576229bc33406b48e1a3ca66dae2e6b15e74513f
+# for idx in range(len(l1)):
+#     l3 = []
+#     for idy in range(len(l1[0])):
+#         l3.append(l2[idx][idy] + l1[idx][idy])
+#     l4.append(l3)
+# print(l4)

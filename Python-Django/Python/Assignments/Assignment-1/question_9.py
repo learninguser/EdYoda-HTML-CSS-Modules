@@ -1,17 +1,20 @@
-def findSubarray(a, k, n): 
+def findSubarray(a, k): 
     vec=[] 
-    for i in range(n-k+1): 
+    for i in range(len(a) - k + 1): 
         temp=[] 
-        for j in range(i,i+k): 
+        for j in range(i, i + k): 
             temp.append(a[j]) 
-        vec.append(temp) 
-  
-    vec=sorted(vec) 
-  
-    return vec[len(vec) - 1]
+        vec.append(temp)  
+    
+    ans = vec[0]
+    
+    for idx in range(1, len(vec)):
+        if vec[idx] > ans:
+            ans = vec[idx]
+    
+    return ans
 
 arr = [1,2,3,4,5]
 k = 4
-n = len(arr)
 
-print(findSubarray(list(arr), k, n))
+print(findSubarray(list(arr), k))
