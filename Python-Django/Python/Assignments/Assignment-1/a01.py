@@ -33,12 +33,35 @@ def question_first_solution(input_seq):
     return decoded
 
 def question_second_solution(tickets):
-    # Write your code here
-    pass
+    def travel_sequence(travel_trip):
+
+        keys = set(travel_trip.keys())
+        values = set(travel_trip.values())
+
+        diff_values = keys.symmetric_difference(values)
+
+        for idx in diff_values:
+            if idx not in keys:
+                end_trip = idx
+            else:
+                start_trip = idx
+
+        start = True
+        trip = {}
+
+        while start:
+            city = travel_trip[start_trip]
+            trip[start_trip] = city
+            if city == end_trip:
+                start = False
+            else:
+                start_trip = travel_trip[start_trip]
+
+        return trip
+    travel_sequence(tickets)
 
 def question_third_solution(states):
     # Write your code here
-    state = states.keys()
     cities = list(states.values())
 
     output = {}
@@ -55,8 +78,8 @@ def question_third_solution(states):
 
     tempVar = list(states.items())
 
-    for idx, value in enumerate(tempVar):
-        for idy, val in enumerate(value[1]):
+    for value in tempVar:
+        for val in value[1]:
             if val in output:
                 output[val].append(value[0])
     return output
@@ -75,7 +98,7 @@ def question_fourth_solution(brackets):
                 return False
     return True
 
-def question_fifth_solution(number):
+def question_fifth_solution(number): # need to work on this
     # Write your code here
     given_int = number
 
@@ -102,7 +125,7 @@ def question_fifth_solution(number):
 def question_sixth_solution(code): 
     count = 0
     str_split = code.split('\n')
-    for idx, value in enumerate(str_split):
+    for value in str_split:
         if value == '' or value.startswith('#'):
             continue
         else:
