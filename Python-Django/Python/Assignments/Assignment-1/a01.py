@@ -132,6 +132,7 @@ def question_sixth_solution(code): # complete
         count = 0
         str_split = code.split('\n')
         for value in str_split:
+            value = value.strip()
             if value == '' or value.startswith('#'):
                 continue
             else:
@@ -139,7 +140,7 @@ def question_sixth_solution(code): # complete
         return count
     return question_six(code)
 
-def question_seventh_solution(string): # complete but test cases are incorrect
+def question_seventh_solution(string): # complete
 
     def password_strength(password):
     
@@ -181,36 +182,36 @@ def question_seventh_solution(string): # complete but test cases are incorrect
             else:
                 res[0] = "InValid"
                 res[1].append("The length of the password must be at least 8 characters in length")
-                if not specialChar:
-                    res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
                 if not hasUpper:
                     res[1].append("The password must contain at least 1 capital letter")
-                if not hasLower:
-                    res[1].append("The password must contain at least 1 lower case letter")
                 if not hasDigit:
                     res[1].append("The password must contain at least 1 digit")
+                if not specialChar:
+                    res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
+                if not hasLower:
+                    res[1].append("The password must contain at least 1 lower case letter")
             return tuple(res)
 
         # if len(password) < 8:
         #     return (["InValid",["The length of the password must be at least 8 characters in length"]])
 
         elif hasLower and hasUpper and hasDigit and specialChar:
-            res[0] = "Valid"
+            res[0] = str("Valid")
 
         else:
             res[0] = "InValid"
-            if not specialChar:
-                res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
             if not hasUpper:
-                res[1].append("The password must contain at least 1 capital letter")
-            if not hasLower:
-                res[1].append("The password must contain at least 1 lower case letter")
+                    res[1].append("The password must contain at least 1 capital letter")
             if not hasDigit:
                 res[1].append("The password must contain at least 1 digit")
+            if not specialChar:
+                res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
+            if not hasLower:
+                res[1].append("The password must contain at least 1 lower case letter")
         
         return tuple(res)
 
-    password_strength(string)
+    return password_strength(string)
 
 def question_eighth_solution(string): # complete
 
@@ -252,7 +253,7 @@ def question_eighth_solution(string): # complete
 
     return check_sentence(string)
 
-def question_ninth_solution(arr, k): # complete but test cases are incorrect
+def question_ninth_solution(arr, k): # complete
     def findSubarray(a, k): 
         vec=[] 
         for i in range(len(a) - k + 1): 
