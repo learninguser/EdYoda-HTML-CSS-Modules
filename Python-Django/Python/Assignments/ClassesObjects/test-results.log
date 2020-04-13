@@ -1504,3 +1504,180 @@ E        +    where <bound method MinimumBalanceAccount.withdraw of <a01.Minimum
 
 test_students.py:50: AssertionError
 ========================================================= 6 failed, 4 passed in 0.10s ==========================================================
+====================================================== test session starts =======================================================
+platform linux -- Python 3.6.9, pytest-5.4.1, py-1.8.1, pluggy-0.13.1
+rootdir: /home/uwbteam/Documents/PythonPractice/EdYoda-Learning/Python-Django/Python/Assignments/ClassesObjects
+collected 10 items
+
+test_students.py ....FFFFFF                                                                                                [100%]
+
+============================================================ FAILURES ============================================================
+_____________________________________________ test_eval5[test_input10-50-expected0] ______________________________________________
+
+test_input1 = (10, 20, 30, 40, 50, 60, ...), test_input2 = 50, expected = [(1, 2), (0, 3)]
+
+    @pytest.mark.parametrize("test_input1, test_input2, expected", [((10,20,30,40,50,60,70),50,[(1, 2), (0, 3)])])
+    def test_eval5(test_input1, test_input2, expected):
+>       assert Sum().twoSum(test_input1, test_input2) == expected
+E       TypeError: __init__() missing 2 required positional arguments: 'nums' and 'target'
+
+test_students.py:25: TypeError
+_______________________________________________ test_eval6[test_input0-expected0] ________________________________________________
+
+test_input = [-25, -10, -7, -3, 2, 4, ...], expected = [[-10, 2, 8], [-7, -3, 10]]
+
+    @pytest.mark.parametrize("test_input, expected", [([-25, -10, -7, -3, 2, 4, 8, 10],[[-10, 2, 8], [-7, -3, 10]])])
+    def test_eval6(test_input, expected):
+>       assert SumEqualsZero().threeSum(test_input) == expected
+E       assert None == [[-10, 2, 8], [-7, -3, 10]]
+E        +  where None = <bound method SumEqualsZero.threeSum of <a01.SumEqualsZero object at 0x7faa3a5bee80>>([-25, -10, -7, -3, 2, 4, ...])
+E        +    where <bound method SumEqualsZero.threeSum of <a01.SumEqualsZero object at 0x7faa3a5bee80>> = <a01.SumEqualsZero object at 0x7faa3a5bee80>.threeSum
+E        +      where <a01.SumEqualsZero object at 0x7faa3a5bee80> = SumEqualsZero()
+
+test_students.py:29: AssertionError
+________________________________________________________ test_eval7[V-5] _________________________________________________________
+
+test_input = 'V', expected = 5
+
+    @pytest.mark.parametrize("test_input, expected", [('V',5)])
+    def test_eval7(test_input, expected):
+>       assert RomanToInt().roman_to_int(test_input) == expected
+E       AssertionError: assert None == 5
+E        +  where None = <bound method RomanToInt.roman_to_int of <a01.RomanToInt object at 0x7faa3a5c2710>>('V')
+E        +    where <bound method RomanToInt.roman_to_int of <a01.RomanToInt object at 0x7faa3a5c2710>> = <a01.RomanToInt object at 0x7faa3a5c2710>.roman_to_int
+E        +      where <a01.RomanToInt object at 0x7faa3a5c2710> = RomanToInt()
+
+test_students.py:33: AssertionError
+______________________________________________________ test_eval8[500-500] _______________________________________________________
+
+test_input = 500, expected = 500
+
+    @pytest.mark.parametrize("test_input, expected", [(500,500)])
+    def test_eval8(test_input, expected):
+>       assert BankAccount().deposit(test_input) == expected
+E       assert None == 500
+E        +  where None = <bound method BankAccount.deposit of <a01.BankAccount object at 0x7faa3a5d6668>>(500)
+E        +    where <bound method BankAccount.deposit of <a01.BankAccount object at 0x7faa3a5d6668>> = <a01.BankAccount object at 0x7faa3a5d6668>.deposit
+E        +      where <a01.BankAccount object at 0x7faa3a5d6668> = BankAccount()
+
+test_students.py:37: AssertionError
+______________________________________________________ test_eval9[500-5000] ______________________________________________________
+
+test_input = 500, expected = 5000
+
+    @pytest.mark.parametrize("test_input, expected", [(500,5000)])
+    def test_eval9(test_input, expected):
+        b = BankAccount()
+        b.deposit(5500)
+>       assert b.withdraw(test_input) == expected
+E       assert None == 5000
+E        +  where None = <bound method BankAccount.withdraw of <a01.BankAccount object at 0x7faa3a5bcda0>>(500)
+E        +    where <bound method BankAccount.withdraw of <a01.BankAccount object at 0x7faa3a5bcda0>> = <a01.BankAccount object at 0x7faa3a5bcda0>.withdraw
+
+test_students.py:43: AssertionError
+__________________________________ test_eval10[6000-Sorry, minimum balance must be maintained.] __________________________________
+
+test_input = 6000, expected = 'Sorry, minimum balance must be maintained.'
+
+    @pytest.mark.parametrize("test_input, expected",
+    [(6000, 'Sorry, minimum balance must be maintained.')])
+    def test_eval10(test_input, expected):
+        m = MinimumBalanceAccount()
+        m.deposit(10000)
+>       assert m.withdraw(test_input) == expected
+E       AssertionError: assert None == 'Sorry, minimum balance must be maintained.'
+E        +  where None = <bound method MinimumBalanceAccount.withdraw of <a01.MinimumBalanceAccount object at 0x7faa3a5b2588>>(6000)
+E        +    where <bound method MinimumBalanceAccount.withdraw of <a01.MinimumBalanceAccount object at 0x7faa3a5b2588>> = <a01.MinimumBalanceAccount object at 0x7faa3a5b2588>.withdraw
+
+test_students.py:50: AssertionError
+==================================================== short test summary info =====================================================
+FAILED test_students.py::test_eval5[test_input10-50-expected0] - TypeError: __init__() missing 2 required positional arguments:...
+FAILED test_students.py::test_eval6[test_input0-expected0] - assert None == [[-10, 2, 8], [-7, -3, 10]]
+FAILED test_students.py::test_eval7[V-5] - AssertionError: assert None == 5
+FAILED test_students.py::test_eval8[500-500] - assert None == 500
+FAILED test_students.py::test_eval9[500-5000] - assert None == 5000
+FAILED test_students.py::test_eval10[6000-Sorry, minimum balance must be maintained.] - AssertionError: assert None == 'Sorry, ...
+================================================== 6 failed, 4 passed in 0.30s ===================================================
+====================================================== test session starts =======================================================
+platform linux -- Python 3.6.9, pytest-5.4.1, py-1.8.1, pluggy-0.13.1
+rootdir: /home/uwbteam/Documents/PythonPractice/EdYoda-Learning/Python-Django/Python/Assignments/ClassesObjects
+collected 10 items
+
+test_students.py .....FFFFF                                                                                                [100%]
+
+============================================================ FAILURES ============================================================
+_______________________________________________ test_eval6[test_input0-expected0] ________________________________________________
+
+test_input = [-25, -10, -7, -3, 2, 4, ...], expected = [[-10, 2, 8], [-7, -3, 10]]
+
+    @pytest.mark.parametrize("test_input, expected", [([-25, -10, -7, -3, 2, 4, 8, 10],[[-10, 2, 8], [-7, -3, 10]])])
+    def test_eval6(test_input, expected):
+>       assert SumEqualsZero().threeSum(test_input) == expected
+E       assert None == [[-10, 2, 8], [-7, -3, 10]]
+E        +  where None = <bound method SumEqualsZero.threeSum of <a01.SumEqualsZero object at 0x7f16e65443c8>>([-25, -10, -7, -3, 2, 4, ...])
+E        +    where <bound method SumEqualsZero.threeSum of <a01.SumEqualsZero object at 0x7f16e65443c8>> = <a01.SumEqualsZero object at 0x7f16e65443c8>.threeSum
+E        +      where <a01.SumEqualsZero object at 0x7f16e65443c8> = SumEqualsZero()
+
+test_students.py:29: AssertionError
+________________________________________________________ test_eval7[V-5] _________________________________________________________
+
+test_input = 'V', expected = 5
+
+    @pytest.mark.parametrize("test_input, expected", [('V',5)])
+    def test_eval7(test_input, expected):
+>       assert RomanToInt().roman_to_int(test_input) == expected
+E       AssertionError: assert None == 5
+E        +  where None = <bound method RomanToInt.roman_to_int of <a01.RomanToInt object at 0x7f16e6544860>>('V')
+E        +    where <bound method RomanToInt.roman_to_int of <a01.RomanToInt object at 0x7f16e6544860>> = <a01.RomanToInt object at 0x7f16e6544860>.roman_to_int
+E        +      where <a01.RomanToInt object at 0x7f16e6544860> = RomanToInt()
+
+test_students.py:33: AssertionError
+______________________________________________________ test_eval8[500-500] _______________________________________________________
+
+test_input = 500, expected = 500
+
+    @pytest.mark.parametrize("test_input, expected", [(500,500)])
+    def test_eval8(test_input, expected):
+>       assert BankAccount().deposit(test_input) == expected
+E       assert None == 500
+E        +  where None = <bound method BankAccount.deposit of <a01.BankAccount object at 0x7f16e64f2a90>>(500)
+E        +    where <bound method BankAccount.deposit of <a01.BankAccount object at 0x7f16e64f2a90>> = <a01.BankAccount object at 0x7f16e64f2a90>.deposit
+E        +      where <a01.BankAccount object at 0x7f16e64f2a90> = BankAccount()
+
+test_students.py:37: AssertionError
+______________________________________________________ test_eval9[500-5000] ______________________________________________________
+
+test_input = 500, expected = 5000
+
+    @pytest.mark.parametrize("test_input, expected", [(500,5000)])
+    def test_eval9(test_input, expected):
+        b = BankAccount()
+        b.deposit(5500)
+>       assert b.withdraw(test_input) == expected
+E       assert None == 5000
+E        +  where None = <bound method BankAccount.withdraw of <a01.BankAccount object at 0x7f16e654fe48>>(500)
+E        +    where <bound method BankAccount.withdraw of <a01.BankAccount object at 0x7f16e654fe48>> = <a01.BankAccount object at 0x7f16e654fe48>.withdraw
+
+test_students.py:43: AssertionError
+__________________________________ test_eval10[6000-Sorry, minimum balance must be maintained.] __________________________________
+
+test_input = 6000, expected = 'Sorry, minimum balance must be maintained.'
+
+    @pytest.mark.parametrize("test_input, expected",
+    [(6000, 'Sorry, minimum balance must be maintained.')])
+    def test_eval10(test_input, expected):
+        m = MinimumBalanceAccount()
+        m.deposit(10000)
+>       assert m.withdraw(test_input) == expected
+E       AssertionError: assert None == 'Sorry, minimum balance must be maintained.'
+E        +  where None = <bound method MinimumBalanceAccount.withdraw of <a01.MinimumBalanceAccount object at 0x7f16e6544cf8>>(6000)
+E        +    where <bound method MinimumBalanceAccount.withdraw of <a01.MinimumBalanceAccount object at 0x7f16e6544cf8>> = <a01.MinimumBalanceAccount object at 0x7f16e6544cf8>.withdraw
+
+test_students.py:50: AssertionError
+==================================================== short test summary info =====================================================
+FAILED test_students.py::test_eval6[test_input0-expected0] - assert None == [[-10, 2, 8], [-7, -3, 10]]
+FAILED test_students.py::test_eval7[V-5] - AssertionError: assert None == 5
+FAILED test_students.py::test_eval8[500-500] - assert None == 500
+FAILED test_students.py::test_eval9[500-5000] - assert None == 5000
+FAILED test_students.py::test_eval10[6000-Sorry, minimum balance must be maintained.] - AssertionError: assert None == 'Sorry, ...
+================================================== 5 failed, 5 passed in 0.15s ===================================================

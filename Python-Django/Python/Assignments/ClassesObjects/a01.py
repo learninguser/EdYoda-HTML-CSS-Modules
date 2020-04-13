@@ -54,10 +54,20 @@ class Subset:
         return [current]
 
 # question_fifth_solution:
-class Sum:
-   def twoSum(self, nums, target):
-        # Write you code here
-        pass
+class Sum:    
+    def twoSum(self, nums, target):
+        temp = [val for val in nums if val <= target]
+        indices = []
+
+        for idx in range(len(temp)):
+                for idy in range(idx, len(temp)):
+                        tI = []
+                        if temp[idx] + temp[idy] == target:
+                                tI.extend([idx, idy])
+                                indices.append(tuple(tI))
+
+        indices = sorted(indices, key=lambda x: x[1])
+        return indices
 
 # question_sixth_solution:
 class SumEqualsZero:

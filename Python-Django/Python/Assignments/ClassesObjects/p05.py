@@ -1,14 +1,23 @@
 class Sum:
-   def twoSum(self, nums, target):
-        # Write you code here
-        pass
+    def __init__(self, nums, target):
+        self.nums = nums
+        self.target = target
+    
+    def twoSum(self):
+        temp = [val for val in self.nums if val <= self.target]
+        indices = []
 
-nums = (10,20,30,40,50,60,70)
+        for idx in range(len(temp)):
+            for idy in range(idx + 1, len(temp)):
+                tI = []
+                if temp[idx] + temp[idy] == self.target:
+                    tI.extend([idx, idy])
+                    indices.append(tuple(tI))
+
+        indices = sorted(indices, key=lambda x: x[1])
+        return indices
+
+nums = (1,5,10,15,20,30)
 target = 50
-
-tempList = [val for val in nums if val < target]
-indices = []
-tI = ()
-
-for idx, val in tempList:
-        
+sum = Sum(nums, target)
+print(sum.twoSum())
