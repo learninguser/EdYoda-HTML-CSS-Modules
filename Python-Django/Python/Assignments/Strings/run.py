@@ -23,7 +23,6 @@ except:
 # logging.basicConfig(filename='submission.log')
 logging.basicConfig(level=logging.DEBUG)
 
-
 url = "http://assessments.edyoda.com/autograde/api/"
 
 def touch(fname, times=None):
@@ -216,11 +215,12 @@ class Submission():
             logging.error("RESPONSE: " + result['message'])      
             logging.error("="*80)
             sys.exit(1)
-        
+
+
         elif r.status_code == 500 or r.status_code == 504:
-            logging.info("="*80)      
-            logging.info("NOTE: Your submission is under process, please check assessments.edyoda.com to get results")      
-            logging.info("="*80)
+            logging.INFO("="*80)      
+            logging.INFO("Your submission is under process, please check assessments.edyoda.com to get results")      
+            logging.INFO("="*80)
             sys.exit(1)
 
         else:
@@ -228,7 +228,6 @@ class Submission():
             logging.error("ERROR: Invalid request, status_code: " + str(r.status_code))      
             logging.error("="*80)
             sys.exit(1)
-
 
     def run(self):
         if len(sys.argv) == 1:
@@ -239,7 +238,7 @@ class Submission():
             score = result['message']
             logging.info("="*80)
             logging.info("RESPONSE: " + " passed: " + str(score[0]) + " failed: " + str(score[1]) + " score: " + str(score[2]))
-            logging.info("NOTE: You can see your submission on assessments.edyoda.com.")
+            logging.info("NOTE: You can see your submission on web interface also.")
             logging.info("="*80)
         elif sys.argv[1] == "local":
             (result, out) = run_student_tests(os.getcwd(), self.config['total_points'])

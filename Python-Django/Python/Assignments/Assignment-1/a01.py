@@ -177,10 +177,10 @@ def question_seventh_solution(string): # complete
 
         if len(password) < 8:
             if hasLower and hasUpper and hasDigit and specialChar:
-                res[0] = "InValid"
+                res[0] = "Weak"
                 res[1].append("The length of the password must be at least 8 characters in length")
             else:
-                res[0] = "InValid"
+                res[0] = "Weak"
                 res[1].append("The length of the password must be at least 8 characters in length")
                 if not hasUpper:
                     res[1].append("The password must contain at least 1 capital letter")
@@ -188,18 +188,18 @@ def question_seventh_solution(string): # complete
                     res[1].append("The password must contain at least 1 digit")
                 if not specialChar:
                     res[1].append("The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)")
-                if not hasLower:
-                    res[1].append("The password must contain at least 1 lower case letter")
+                # if not hasLower:
+                #     res[1].append("The password must contain at least 1 lower case letter")
             return tuple(res)
 
         # if len(password) < 8:
         #     return (["InValid",["The length of the password must be at least 8 characters in length"]])
 
         elif hasLower and hasUpper and hasDigit and specialChar:
-            res[0] = str("Valid")
+            res[0] = str("Strong")
 
         else:
-            res[0] = "InValid"
+            res[0] = "Weak"
             if not hasUpper:
                     res[1].append("The password must contain at least 1 capital letter")
             if not hasDigit:

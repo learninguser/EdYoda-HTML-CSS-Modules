@@ -57,11 +57,11 @@ print(result)
 def test_eval6(test_input, expected):
     assert question_sixth_solution(test_input) == expected
 
-@pytest.mark.parametrize("test_input, expected", [("Abcd@1234", ("Valid",[]))])
+@pytest.mark.parametrize("test_input, expected", [('ABC23', ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)']))])
 def test_eval7(test_input, expected):
     assert question_seventh_solution(test_input) == expected
 
-@pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True,['Your sentence is syntactically correct!']))])
+@pytest.mark.parametrize("test_input, expected", [("An important part of my life has been the people who stood by me.", (True, ['Your sentence is syntactically correct!']))])
 def test_eval8(test_input, expected):
     assert question_eighth_solution(test_input) == expected
 

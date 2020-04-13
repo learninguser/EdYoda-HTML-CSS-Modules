@@ -2397,3 +2397,77 @@ collected 10 items
 test_student.py ..........                                                                                                                                  [100%]
 
 ======================================================================= 10 passed in 0.03s ========================================================================
+============================================================= test session starts ==============================================================
+platform linux -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /home/pavan/Documents/EdYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1
+collected 10 items
+
+test_student.py ......F...                                                                                                               [100%]
+
+=================================================================== FAILURES ===================================================================
+_________________________________________________________ test_eval7[ABC23-expected0] __________________________________________________________
+
+test_input = 'ABC23'
+expected = ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)']))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert ('InValid', [...case letter']) == ('Weak', ['Th...(!,@,#,$,&)'])
+E         At index 0 diff: 'InValid' != 'Weak'
+E         Use -v to get the full diff
+
+test_student.py:62: AssertionError
+========================================================= 1 failed, 9 passed in 0.23s ==========================================================
+============================================================= test session starts ==============================================================
+platform linux -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /home/pavan/Documents/EdYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1
+collected 10 items
+
+test_student.py ......F...                                                                                                               [100%]
+
+=================================================================== FAILURES ===================================================================
+_________________________________________________________ test_eval7[ABC23-expected0] __________________________________________________________
+
+test_input = 'ABC23'
+expected = ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)']))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert ('Weak', ['Th...case letter']) == ('Weak', ['Th...(!,@,#,$,&)'])
+E         At index 1 diff: ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)', 'The password must contain at least 1 lower case letter'] != ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)']
+E         Use -v to get the full diff
+
+test_student.py:62: AssertionError
+========================================================= 1 failed, 9 passed in 0.06s ==========================================================
+============================================================= test session starts ==============================================================
+platform linux -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /home/pavan/Documents/EdYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1
+collected 10 items
+
+test_student.py ......F...                                                                                                               [100%]
+
+=================================================================== FAILURES ===================================================================
+_________________________________________________________ test_eval7[ABC23-expected0] __________________________________________________________
+
+test_input = 'ABC23'
+expected = ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)'])
+
+    @pytest.mark.parametrize("test_input, expected", [('ABC23', ('Weak', ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)']))])
+    def test_eval7(test_input, expected):
+>       assert question_seventh_solution(test_input) == expected
+E       AssertionError: assert ('Weak', ['Th...case letter']) == ('Weak', ['Th...(!,@,#,$,&)'])
+E         At index 1 diff: ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)', 'The password must contain at least 1 lower case letter'] != ['The length of the password must be at least 8 characters in length', 'The password must contain at least 1 special character and allowed special characters are (!,@,#,$,&)']
+E         Use -v to get the full diff
+
+test_student.py:62: AssertionError
+========================================================= 1 failed, 9 passed in 0.06s ==========================================================
+============================================================= test session starts ==============================================================
+platform linux -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /home/pavan/Documents/EdYoda/EdYoda-Learning/Python-Django/Python/Assignments/Assignment-1
+collected 10 items
+
+test_student.py ..........                                                                                                               [100%]
+
+============================================================== 10 passed in 0.03s ==============================================================

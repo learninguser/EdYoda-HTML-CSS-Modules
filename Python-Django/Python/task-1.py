@@ -75,24 +75,24 @@
 # which_max = 3
 # print(find_max(l1, which_max))
 
-import random
+# import random
 
-special_chars = ['!','@','#','$','&']
-lower_case_chars = list(range(ord('a'), ord('z') + 1))
-upper_case_chars = list(range(ord('A'), ord('Z') + 1))
-numbers = range(10000,100000)
+# special_chars = ['!','@','#','$','&']
+# lower_case_chars = list(range(ord('a'), ord('z') + 1))
+# upper_case_chars = list(range(ord('A'), ord('Z') + 1))
+# numbers = range(10000,100000)
 
-def gen_password():
-    special_char = random.choice(special_chars)
-    lower_case = chr(random.choice(lower_case_chars))
-    upper_case = chr(random.choice(upper_case_chars))
-    number = str(random.choice(numbers))
-    password = [special_char, lower_case, upper_case, number]
-    password = ''.join(random.sample(password, 4))
-    return password
+# def gen_password():
+#     special_char = random.choice(special_chars)
+#     lower_case = chr(random.choice(lower_case_chars))
+#     upper_case = chr(random.choice(upper_case_chars))
+#     number = str(random.choice(numbers))
+#     password = [special_char, lower_case, upper_case, number]
+#     password = ''.join(random.sample(password, 4))
+#     return password
 
-if __name__ == "__main__":
-    print(gen_password())
+# if __name__ == "__main__":
+#     print(gen_password())
 
 # s = "Python is easy to learn"
 # s1 = "Python is Easy to Learn"
@@ -240,3 +240,22 @@ if __name__ == "__main__":
 #         l3.append(l2[idx][idy] + l1[idx][idy])
 #     l4.append(l3)
 # print(l4)
+
+
+class Products:
+    def __init__(self, prod_id, prod_name, unit_price, stock):
+        self.prod_id = prod_id
+        self.prod_name = prod_name
+        self.unit_price = unit_price
+        self.stock = stock
+
+class Orders:
+    def __init__(self, order_id, order_details):
+        self.order_id = order_id
+        self.order_details = order_details
+
+class Order_details:
+    def __init__(self, prod_id, unit_price, quantity):
+        self.prod_id = prod_id
+        self.unit_price = unit_price
+        self.quantity = quantity
