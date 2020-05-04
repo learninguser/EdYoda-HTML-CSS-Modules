@@ -1,0 +1,37 @@
+Blog App:
+
+Columns need to be in these table:
+Blogs //One blog can be written by only one author.
+Authors //One author can have multiple blogs.
+Categories //One blog can have only one category.
+
+
+create table author (
+  id int AUTO_INCREMENT,
+  first_name varchar(255) NOT NULL,
+  last_name varchar(255),
+  email varchar(255) NOT NULL UNIQUE,
+  follower int,
+  profile_pic varchar(255),
+  primary key(id)
+);
+
+1	qaifi	khan	qaifi@test.com	100	https://
+insert into author values (0, 'qaifi', 'khan', 'qaifi@test.com', 100, 'https://img.png');
+
+insert into author values (1, 'kunal', 'kirange', 'kunal@test.com', 200, 'https://img.png');
+
+insert into author values (5, 'awantik', 'das', 'awantik@test.com', 300, 'https://img.png');
+
+create table blog (
+	id int AUTO_INCREMENT,
+	title varchar(100) NOT NULL,
+	description varchar(255),
+	authorId int NOT NULL,
+	likes int,
+	views int,
+	comments int,
+	cover_image varchar(255),
+	primary key(id),
+	foreign key(authorId) references author(id)
+);
