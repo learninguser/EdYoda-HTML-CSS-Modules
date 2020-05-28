@@ -49,12 +49,19 @@ from django.db import models
 # category 
 # author 
 
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     statuses = [("D","Draft"),("P","Published")]
 
     title = models.CharField(max_length = 250)
     content = models.TextField()
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     status = models.CharField(max_length=1,choices=statuses,default="D")
 
     def __str__(self):

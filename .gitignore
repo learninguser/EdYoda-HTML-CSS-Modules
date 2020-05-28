@@ -7,3 +7,12 @@ Python-Django/Python/Assignments/.vscode/*
 Python-Django/Python/Assignments/Assignment-1/.ipynb_checkpoints/*
 *.png
 Python-Django/Python/**/**/*.log
+Python-Django/**/migrations
+Python-Django/Django/**/__pycache__
+*.png
+*.jpg
+*.jpeg
+Python-Django/**/*.sqlite3
+db.sqlite3
+**/migrations
+**/__pycache__
