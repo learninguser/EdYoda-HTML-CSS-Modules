@@ -1,3 +1,6 @@
 [submodule "Python-Django/Django/PD-230120-django-cms"]
 	path = Python-Django/Django/PD-230120-django-cms
 	url = https://github.com/edyoda/PD-230120-django-cms.git
+[submodule "Python-Django/Python/Projects/CareAll"]
+	path = Python-Django/Python/Projects/CareAll
+	url = https://github.com/learninguser/CareAll.git
