@@ -1,0 +1,46 @@
+html,
+body {
+    margin: 0;
+    background-color: #f2f6ff;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+#nav-menu {
+    background-color: #ffffff;
+}
+
+#logo {
+    font-weight: 900;
+    font-size: 40px;
+    color: #0086ff;
+    display: inline-block;
+    margin: 0px 25px;
+    padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-size: 1.25rem;
+}
+
+
+/* Body Content */
+
+.container {
+    margin-top: 2rem;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: x-large;
+}
+
+.card-body {
+    color: black;
+}
