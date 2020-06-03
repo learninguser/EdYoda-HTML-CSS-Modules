@@ -28,10 +28,17 @@
                 <div class="col mb-4">
                     <a href="blog/{{ post.id }}">
                         <div class="card h-100 mx-0" style="width:rem; height:20rem;">
-                            <img class="card-img-top" src="https://edyoda.s3.amazonaws.com/media/blog-images/edyoda_WxvDSK1.jpg" alt="Card image cap">
+                            {% if  post.image %}
+                                <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                            {% else %}
+                                <img class="card-img-top" src="https://edyoda.s3.amazonaws.com/media/blog-images/edyoda_WxvDSK1.jpg" alt="Card image cap">
+                            {% endif %}
                             <div class="card-body">
                                 <h5 class="card-title">{{ post.title }}</h5>
                                 <p class="card-text">{{ post.content | truncatechars:100 }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated on {{ post.last_updated }} </small>
                             </div>
                         </div>
                     </a>

@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime
 # Create your models here.
 
 
@@ -70,6 +70,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     status = models.CharField(max_length=1,choices=statuses,default="D")
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='blog/',blank=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
