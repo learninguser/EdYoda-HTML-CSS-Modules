@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                {% for post in posts %}
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <div class="col mb-4">
+                        <a href="blogs/{{ post.id }}"></a>
+                        <p>
+                        by
+                        <a href="#">Pavan</a>
+                        </p>
+                        <hr>
+                        <p>Posted on June 2nd, 2020 at 09:00 PM</p>
+                        <hr>
+                        <img class="img-fluid rounded w-50" src="{% static "blog/images/post-img.jpeg"%}" alt="Blog Post Image">
+                        <hr>
+                        <div style="text-align: justify;">
+                            {{ post.content }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

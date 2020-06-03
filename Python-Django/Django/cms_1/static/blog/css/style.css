@@ -10,7 +10,6 @@ body {
 
 #nav-menu {
     background-color: #ffffff;
-    height: 80px;
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -19,6 +18,7 @@ body {
 }
 
 #logo {
+    font-family: 'Raleway', 'Times New Roman', Times, serif;
     font-weight: 900;
     font-size: 32px;
     color: #0086ff;
@@ -29,16 +29,50 @@ body {
 
 .navbar-light .navbar-nav .nav-link {
     color: black;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
+/* Button group */
+.category-buttons {
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.category-buttons button {
+    display: inline-block;
+    color: rgb(0, 132, 255);
+    border: 1px solid rgb(0, 132, 255);
+    border-radius: 20px;
+    background-color: white;
+    font-family: "Raleway";
+    font-size: 12px;
+    cursor: pointer;
+    min-width: 50px;
+    padding: 6px 14px;
+    margin: 5px;
+}
+
+.filter-ico{
+    margin-top: 5rem;
+    font-size: 24px;
+    color: blueviolet;
+    vertical-align: middle;
+}
+
+.filter-content{
+    margin-left: 1rem;
+    color:black;
+    font-family: 'Raleway', 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+/* End Button Group*/
 
 /* Body Content */
 
-.container {
-    margin-top: 3rem;
+.card-content{
+    margin-top: 10px;
 }
-
 a:hover {
     text-decoration: none;
 }
@@ -49,4 +83,8 @@ a:hover {
 
 .card-body {
     color: black;
+}
+
+.post-title{
+    margin-top: 6rem;
 }
